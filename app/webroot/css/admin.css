@@ -96,3 +96,16 @@ body{
 a{
 	color: #21759b;
 }
+
+.notification{
+	padding: 8px 0 8px 6px;
+	margin-bottom: 5px;
+	margin-left: 8px;
+	border-radius: 3px;
+}
+
+.notification.error{
+	background-image: -webkit-linear-gradient(top, #ff7979 0%, #e54242 100%);
+	border: 1px solid #e54242;
+	color: white;
+}

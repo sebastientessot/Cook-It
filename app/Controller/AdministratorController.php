@@ -40,9 +40,9 @@
 			}
 			
 			if($this->Administrator->save($data, true, array('identifiant', 'email', 'password'))){
-				
+				$this->Session->setFlash("Votre compte a bien été créé","notif");
 			}else{
-				//die('error');
+				$this->Session->setFlash("Merci de corriger vos erreurs","notif", array("type" => "error"));
 			}
 		}
 		

@@ -26,6 +26,11 @@
 		$this->layout = 'admin';
 	}
 	
+	public function logout(){
+		$this->Auth->logout();
+		$this->redirect($this->referer());
+	}
+	
 	public function signup() {
 		
 		if($this->request->is('post')){

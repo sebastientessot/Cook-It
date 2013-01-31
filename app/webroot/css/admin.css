@@ -109,3 +109,9 @@ a{
 	border: 1px solid #e54242;
 	color: white;
 }
+
+.notification.success{
+	background-image: -webkit-linear-gradient(top, #81c973 0%, #3ab53e 100%);
+	border: 1px solid #3ab53e;
+	color: white;
+}

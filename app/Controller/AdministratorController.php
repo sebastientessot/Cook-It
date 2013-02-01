@@ -22,8 +22,16 @@
 	 *
 	 */
 	public function login() {
-	
+		
 		$this->layout = 'admin';
+		
+		if($this->request->is('post')){
+			if($this->Auth->login()){
+				$this->redirect(array('controller' =>'administrator', 'action' => 'overview'));
+			}else{
+				$this->Session->setFlash("Identifiant ou mot de passe incorrect","notif", array("type" => "error"));
+			}
+		}
 	}
 	
 	public function logout(){
@@ -39,9 +47,7 @@
 			$data['Administrator']['id'] = null;
 			
 			if(!empty($data['Administrator']['password'])){
-				$data['Administrator']['password'] = Security::hash($data['Administrator']['password']);
-				/*debug($data);
-				echo("password = ".$data['Administrator']['password']);*/
+				$data['Administrator']['password'] = AuthComponent::password($data['Administrator']['password']);
 			}
 			
 			if($this->Administrator->save($data, true, array('identifiant', 'email', 'password'))){

@@ -37,6 +37,9 @@ class AppController extends Controller {
 	
 	function beforeFilter(){
 		$this->Auth->allow();
+		$this->Auth->authenticate = array('Form' => array(
+			'userModel' => 'Administrator',
+			'fields'=> array('username'=>'identifiant'))); 
 	}
 
 }

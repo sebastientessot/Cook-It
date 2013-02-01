@@ -1,7 +1,8 @@
-
 <div id="login_container">
 	<?php
 		echo $this->Html->link("", "../.." , array('class' => 'logo'));
+		
+		echo $this->Session->flash();
 	
 		echo $this->Form->create('Administrator');
 			

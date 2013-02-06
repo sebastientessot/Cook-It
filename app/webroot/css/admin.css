@@ -1,9 +1,16 @@
+html, body{
+	margin:0;
+	padding:0;
+	height:100%;
+}
+
 body{
 	color: #333;
 	margin: 0;
 	font-family: sans-serif;
 	font-size: 13px;
 	line-height: 1.4em;
+	min-height: 100%;
 }
 
 #login_container{
@@ -114,4 +121,95 @@ a{
 	background-image: -webkit-linear-gradient(top, #81c973 0%, #3ab53e 100%);
 	border: 1px solid #3ab53e;
 	color: white;
+}
+
+#admin_header{
+	height: 28px;
+	width: 100%;
+	background: #464646;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #46463D;
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0,#373737),color-stop(18%,#464646));
+	background-image: -webkit-linear-gradient(bottom,#373737 0,#464646 5px);
+	background-image: -moz-linear-gradient(bottom,#373737 0,#464646 5px);
+	background-image: -o-linear-gradient(bottom,#373737 0,#464646 5px);
+	background-image: linear-gradient(to top,#373737 0,#464646 5px);
+}
+
+#admin-log-content{
+	margin-left: 250px;
+}
+
+#side_bar{
+	width: 250px;
+	height: 100%;
+	margin-left: -5px;
+	box-shadow: inset -1px 2px 15px black;
+	background-color: #dfdfdf;
+	border: 1px solid #bbb;
+	float: left;
+}
+
+#bar-menu{
+	list-style: none;
+}
+
+#bar-margin-top{
+	height: 200px;
+}
+
+.menu-element{
+	margin-left: -35px;
+	padding-left: 30px;
+	line-height: 40px;
+	border-top: 1px solid #fcfcfc;
+	border-bottom: 1px solid #c3c3c3;
+	background: #eeeeee;
+	color: #777;
+	font-size: 14px;
+}
+
+.menu-element:hover{
+	background: #777;
+	color: #eeeeee;
+}
+
+.menu-element:hover #triangle-hover{
+	display: block;
+}
+
+#triangle-selected{
+	left: 246px;
+	position: absolute;
+	width:0px;
+	height:0px;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 25px solid #eeeeee;
+	z-index: 10;
+}
+
+#triangle-selected-shadow{
+	left: 246px;
+	position: absolute;
+	width:0px;
+	height:0px;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 25px solid #c3c3c3;
+	z-index: 9;
+}
+
+#triangle-hover{
+	left: 246px;
+	position: absolute;
+	width:0px;
+	height:0px;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 25px solid #777;
+	z-index: 11;
+	display: none;
 }

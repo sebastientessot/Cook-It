@@ -59,5 +59,9 @@
 		
 		$this->layout = 'admin';
 	}
+	
+	public function edit(){
+		$this->layout = 'admin_log';
+	}
 }
 ?>

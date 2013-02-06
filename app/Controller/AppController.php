@@ -33,13 +33,19 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-	public $components = array('Session', 'Cookie', 'Auth');
+	public $components = array('Session', 'Cookie', 
+		'Auth' => array(
+			'authenticate' => array(
+				'Form' => array(
+					'userModel' => 'Administrator',
+					'fields'=> array('username'=>'identifiant')
+				)
+			)
+		)
+	);
 	
 	function beforeFilter(){
 		$this->Auth->allow();
-		$this->Auth->authenticate = array('Form' => array(
-			'userModel' => 'Administrator',
-			'fields'=> array('username'=>'identifiant'))); 
 	}
 
 }
